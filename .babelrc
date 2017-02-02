@@ -1,0 +1,4 @@
+{
+  "presets": ["babel-preset-es2015"],
+  "plugins": ["transform-es2015-spread", "syntax-object-rest-spread", "transform-object-rest-spread"]
+}
