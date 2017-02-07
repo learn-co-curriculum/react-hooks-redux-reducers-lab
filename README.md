@@ -10,7 +10,7 @@
 
 Each year, around the holidays especially, we forget who we need to buy presents for. Let's write a function that will help us manage our gift recipient list. We should be able to add a person we need to buy a present for and remove people we no longer like (or who give us socks every year!).
 
-This function will be our reducer, and its job it is to return to us a new state.
+This function will be our reducer, and its job is to return to us a new state.
 
 ## Instructions
 
