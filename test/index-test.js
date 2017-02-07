@@ -31,14 +31,14 @@ describe('manageFriends', function() {
     expect(manageFriends(state, {type: "ADD_FRIEND", friend: {name: 'Joe', hometown: 'Boston', id: 101}})).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}]});
   })
 
-  it("removes the friend when action type is 'REMOVE_FRIEND' and the action has a property of friendId to be removed", function(){
+  it("removes the friend when action type is 'REMOVE_FRIEND' and the action has a property of the friends id to be removed", function(){
     let state = {numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}, {name: 'Steven', hometown: 'Philadephia', id: 102}]}
-    expect(manageFriends(state, {type: "REMOVE_FRIEND", friendId: 101})).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Steven', hometown: 'Philadephia', id: 102}]});
+    expect(manageFriends(state, {type: "REMOVE_FRIEND", id: 101})).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Steven', hometown: 'Philadephia', id: 102}]});
   })
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", function(){
     let state = {numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}, {name: 'Steven', hometown: 'Philadephia', id: 102}]}
-    manageFriends(state, {type: "REMOVE_FRIEND", payload: 'Joe'})
+    manageFriends(state, {type: "REMOVE_FRIEND", id: 101})
     expect(state).toEqual({numberOfPresents: 0, friends: [{name: 'Avi', hometown: 'NYC', id: 100}, {name: 'Joe', hometown: 'Boston', id: 101}, {name: 'Steven', hometown: 'Philadephia', id: 102}]})
   })
 })
