@@ -3,28 +3,20 @@ import { manageFriends } from '../src/reducers/manageFriends';
 import sinon from 'sinon';
 
 describe('managePresents', () => {
-  let state = {
-    numberOfPresents: 0,
-    friends: [],
-  };
+
+  let state = { numberOfPresents: 0 };
 
   it("returns the existing state if the action's type doesn't match a type in the reducer", () => {
     expect(managePresents(state, { type: 'Random Action Type' })).toEqual(state);
   });
 
   it("increases the number of presents if there the action's type is 'INCREASE'", () =>{
-    expect(managePresents(state, { type: "INCREASE" })).toEqual({
-      numberOfPresents: 1,
-      friends: []
-    });
+    expect(managePresents(state, { type: "INCREASE" })).toEqual({ numberOfPresents: 1 });
   });
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", () =>{
     managePresents(state, { type: "INCREASE" });
-    expect(state).toEqual({
-      numberOfPresents: 0,
-      friends: [],
-    });
+    expect(state).toEqual({ numberOfPresents: 0 });
   })
 })
 
