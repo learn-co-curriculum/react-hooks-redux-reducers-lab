@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Reducers Lab
 
 ![reduce](https://media.giphy.com/media/3o7TKwxYkeW0ZvTqsU/giphy.gif)
@@ -31,7 +32,12 @@ As the Redux documentation notes:
 If you remember, `Object.assign` is a function that takes any number of arguments. It works by copying over from left to right the properties in each object passed as an argument.  Let's go over an example:
 
 ```javascript
-let dog = {id: 1, name: 'scooby', color: 'brown', age: 4};
+let dog = {
+  id: 1,
+  name: 'scooby',
+  color: 'brown',
+  age: 4
+};
 // if scooby had a birthday, we could write:
 let olderDog = Object.assign({}, dog, {age: dog.age + 1})
 ```
@@ -42,7 +48,12 @@ Translating this to english would be something like, "Start with a new empty obj
 >An alternative approach is to use the object spread syntax proposed for the next versions of JavaScript which lets you use the spread (...) operator to copy enumerable properties from one object to another in a more succinct way
 
 ```javascript
-let dog = {id: 1, name: 'scooby', color: 'brown', age: 4};
+let dog = {
+  id: 1,
+  name: 'scooby',
+  color: 'brown',
+  age: 4
+};
 
 let olderDog = {...dog, age: dog.age + 1}
 ```
