@@ -22,7 +22,6 @@ describe('managePresents', () => {
 
 describe('manageFriends', () => {
   let state = {
-    numberOfPresents: 0,
     friends: [
       {
         name: 'Avi',
@@ -63,7 +62,6 @@ describe('manageFriends', () => {
 
   it("removes the friend when action type is 'REMOVE_FRIEND' and the action has a property of the friends id to be removed", () =>{
     let state = {
-      numberOfPresents: 0,
       friends: [
         {
           name: 'Avi',
@@ -87,7 +85,6 @@ describe('manageFriends', () => {
       type: "REMOVE_FRIEND",
       id: 101
     })).toEqual({
-      numberOfPresents: 0,
       friends: [
         {
           name: 'Avi',
@@ -105,7 +102,6 @@ describe('manageFriends', () => {
 
   it("adheres to the rules of being a pure function, by not changing the original state, and instead returning a new object", () =>{
     let state = {
-      numberOfPresents: 0,
       friends: [
         {
           name: 'Avi',
@@ -126,7 +122,6 @@ describe('manageFriends', () => {
     };
     manageFriends(state, { type: "REMOVE_FRIEND", id: 101 });
     expect(state).toEqual({
-      numberOfPresents: 0,
       friends: [
         {
           name: 'Avi',
