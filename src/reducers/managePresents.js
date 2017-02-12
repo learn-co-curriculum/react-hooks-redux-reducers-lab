@@ -11,3 +11,4 @@ export function managePresents(state = {
     default:
       return state;
   }
+};
