@@ -4,7 +4,7 @@
 ## Objectives
 1. Write a reducer.
 2. The reducer should be a pure function.
-3. Write a reducer that takes a payload.
+3. Write a reducer that takes an action(payload).
 
 ## Overview
 
@@ -15,8 +15,7 @@ This function will be our reducer, and its job is to return to us a new state.
 ## Instructions
 
 1. In `managePresents.js`, write a function called `managePresents` that takes in an action and the previous state as its argument.
-2. In `manageFriends.js` write a function called `manageFriends` that takes in an action and the previous state as its argument.  Unlike `managePresents`, here our action will also have a property called `payload`, which is sometimes needed for producing a new state.
-  *Note: It is very common for an action to have a `payload` property in addition to `type`, but this is only a convention and there is nothing inherently special about the `payload` property.*
+2. In `manageFriends.js` write a function called `manageFriends` that takes in an action and the previous state as its argument.  Unlike `managePresents`, here our action will also have an additional property called `friends`, sometimes an action contains multiple attributes for producing a new state.
 3. Both reducers should be pure functions.  This means that the functions cannot change any object defined outside of the functions.  It also means that given an input, the reducers will always return the same output.
 
 ## A Note on the Object Spread Operator, Code from the Future
