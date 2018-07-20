@@ -50,10 +50,10 @@ input, the reducers will always return the same output.
 ![future](https://media.giphy.com/media/l0CRCmMBYQbL7dCmI/giphy.gif)
 
 **Note that the object spread operator is incorporated into standard JavaScript,
-**and is instead proposed for future versions of JS.  We can only use it here
-**because of configurations set up in our .babelrc file.  Although it isn't
-**fully adopted yet, if you want to write some futuristic code, feel free. It is
-**good to be familiar with it as it can make reducers a look a lot cleaner!**
+and is instead proposed for future versions of JS.  We can only use it here
+because of configurations set up in our .babelrc file.  Although it isn't
+fully adopted yet, if you want to write some futuristic code, feel free. It is
+good to be familiar with it as it can make reducers a look a lot cleaner!**
 
 
 As the Redux documentation notes:
