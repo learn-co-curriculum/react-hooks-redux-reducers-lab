@@ -23,7 +23,7 @@ the job of these reducers to return to us a new state.
 1. In `managePresents.js`, write a function called `managePresents()` that takes
    in the previous state and an action as its argument. Set an default value for
    the state argument - an object with a key, `numberOfPresents`, assigned to
-   `0`. 
+   `0`.
 
   Actions passed into this reducer will only have a _type_ attribute, so they
   would look something like this:
@@ -76,15 +76,7 @@ Both reducers should be pure functions.  This means that the functions cannot
 change any object defined outside of the functions.  It also means that given an
 input, the reducers will always return the same output.
 
-## A Note on the Object Spread Operator
-
-![future](https://media.giphy.com/media/l0CRCmMBYQbL7dCmI/giphy.gif)
-
-**Note that the object spread operator is incorporated into standard JavaScript,
-and is instead proposed for future versions of JS.  We can only use it here
-because of configurations set up in our .babelrc file.  Although it isn't
-fully adopted yet, if you want to write some futuristic code, feel free. It is
-good to be familiar with it as it can make reducers a look a lot cleaner!**
+## Don't Mutate State
 
 As the Redux documentation notes:
 
@@ -92,11 +84,11 @@ As the Redux documentation notes:
 find yourself using `Object.assign()` to create copies of objects with new or
 updated values.
 
-If you remember, `Object.assign` is a function that takes any number of
+If you remember, `Object.assign()` is a function that takes any number of
 arguments. It works by copying over from left to right the properties in each
 object passed as an argument.  Let's go over an example:
 
-```javascript
+```js
 let dog = {id: 1, name: 'scooby', color: 'brown', age: 4};
 // if scooby had a birthday, we could write:
 let olderDog = Object.assign({}, dog, {age: dog.age + 1})
@@ -106,12 +98,16 @@ Translating this to English would be something like, "Start with a new empty
 object, copy over everything from the original `dog`, then overwrite the `age`
 property with a new value."
 
->While effective, using Object.assign() can quickly make simple reducers
+## A Note on the Object Spread Operator
+
+![future](https://media.giphy.com/media/l0CRCmMBYQbL7dCmI/giphy.gif)
+
+While effective, using `Object.assign()` can quickly make simple reducers
 difficult to read given its rather verbose syntax.
 
->An alternative approach is to use the object spread syntax proposed for the
-next versions of JavaScript which lets you use the spread (...) operator to copy
-enumerable properties from one object to another in a more succinct way
+An alternative approach is to use the object spread syntax, which lets you use
+the spread (...) operator to copy enumerable properties from one object to
+another in a more succinct way
 
 ```javascript
 let dog = {id: 1, name: 'scooby', color: 'brown', age: 4};
@@ -124,6 +120,7 @@ the key-value pairs from `dog` copied over with the `age` key overwritten with a
 new value".
 
 ## Resources
+
 - [Mozilla Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 - [Redux Docs: Object Spread Operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html)
 - [Mozilla findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
