@@ -15,33 +15,64 @@ for. Let's write a function that will help us manage our gift recipient list. We
 should be able to add a person we need to buy a present for and remove people we
 no longer like (or who give us socks every year!).
 
-This function will be our reducer, and its job is to return to us a new state.
+In this lab, we will focus on writing two reducers to help us handle this task. It is
+the job of these reducers to return to us a new state.
 
 ## Instructions
 
-1. In `managePresents.js`, write a function called `managePresents` that takes
-in an action and the previous state as its argument. Actions passed into this
-reducer only have a _type_ attribute, so they would look something like this:
+1. In `managePresents.js`, write a function called `managePresents()` that takes
+   in the previous state and an action as its argument. Set an default value for
+   the state argument - an object with a key, `numberOfPresents`, assigned to
+   `0`. 
 
-```js
-action = {
-  type: "INCREASE"
-}
-```
+  Actions passed into this reducer will only have a _type_ attribute, so they
+  would look something like this:
 
-2. In `manageFriends.js` write a function called `manageFriends` that takes in an
-action and the previous state as its argument.  Here, our action will also have
-an additional attribute called `friend`, sometimes an action contains multiple
-attributes for producing a new state.
+    ```js
+      action = {
+        type: "INCREASE"
+      }
+    ```
 
-```js
-action = {
-  type: "ADD_FRIEND",
-  friend: "Chrome Boi"
-}
-```
+  If the reducer receives a `type` set to `"INCREASE"`, return a new state where
+  the value of `numberOfPresents` is increased by one. Use the tests to guide you
+  as you build out this reducer.
 
-3. Both reducers should be pure functions.  This means that the functions cannot
+2. In `manageFriends.js`, write a function called `manageFriends` that takes in
+   the previous state and an action as its argument.  Here, the initial
+   state should be an object with a key, `friends`, set to an empty array.
+
+   This time, the reducer should be able to handle two actions, `"ADD_FRIEND"`
+   and `"REMOVE_FRIEND"`. When adding a friend, the action will include a `friend` key
+   assigned to an object with `name`, `hometown`, and `id` keys.
+
+    ```js
+      action = {
+        type: "ADD_FRIEND",
+        friend: {
+          name: "Chrome Boi"
+          homewtown: "NYC",
+          id: 1
+        }
+      }
+    ```
+
+   When our reducer receives `"ADD_FRIEND"`, it should return a new state with
+   this friend object added to the `friends` array.
+
+   When removing a friend, instead of an object, the action will include an `id` key
+   with an integer. Find the friend with the matching `id` and remove them. Thought of
+   in another way, the reducer is really returning a new state with an array of `friends`
+   that includes everyone _except_ the removed friend.
+
+    ```js
+      action = {
+        type: "REMOVE_FRIEND",
+        id: 1
+      }
+    ```
+
+Both reducers should be pure functions.  This means that the functions cannot
 change any object defined outside of the functions.  It also means that given an
 input, the reducers will always return the same output.
 
@@ -54,7 +85,6 @@ and is instead proposed for future versions of JS.  We can only use it here
 because of configurations set up in our .babelrc file.  Although it isn't
 fully adopted yet, if you want to write some futuristic code, feel free. It is
 good to be familiar with it as it can make reducers a look a lot cleaner!**
-
 
 As the Redux documentation notes:
 
