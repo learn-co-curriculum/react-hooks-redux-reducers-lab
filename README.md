@@ -15,8 +15,10 @@ for. Let's write a function that will help us manage our gift recipient list. We
 should be able to add a person we need to buy a present for and remove people we
 no longer like (or who give us socks every year!).
 
-In this lab, we will focus on writing two reducers to help us handle this task. It is
-the job of these reducers to return to us a new state.
+In this lab, we will focus on writing two reducers to help us handle this task.
+Since we're drilling down into one concept, React is not set up in this lab, nor
+is there an `index.html` file. Follow the instructions below and implement your
+code in `src/reducers/manageFriends.js` and `serc/reducers/managePresents.js`.
 
 ## Instructions
 
@@ -25,26 +27,26 @@ the job of these reducers to return to us a new state.
    the state argument - an object with a key, `numberOfPresents`, assigned to
    `0`.
 
-  Actions passed into this reducer will only have a _type_ attribute, so they
-  would look something like this:
+   Actions passed into this reducer will only have a _type_ attribute, so they
+   would look something like this:
 
-    ```js
-      action = {
-        type: "INCREASE"
-      }
-    ```
+      ```js
+        action = {
+          type: "INCREASE"
+        }
+      ```
 
-  If the reducer receives a `type` set to `"INCREASE"`, return a new state where
-  the value of `numberOfPresents` is increased by one. Use the tests to guide you
-  as you build out this reducer.
+   If the reducer receives a `type` set to `"INCREASE"`, return a new state
+   where the value of `numberOfPresents` is increased by one. Use the tests to
+   guide you as you build out this reducer.
 
 2. In `manageFriends.js`, write a function called `manageFriends` that takes in
-   the previous state and an action as its argument.  Here, the initial
-   state should be an object with a key, `friends`, set to an empty array.
+   the previous state and an action as its argument.  Here, the initial state
+   should be an object with a key, `friends`, set to an empty array.
 
    This time, the reducer should be able to handle two actions, `"ADD_FRIEND"`
-   and `"REMOVE_FRIEND"`. When adding a friend, the action will include a `friend` key
-   assigned to an object with `name`, `hometown`, and `id` keys.
+   and `"REMOVE_FRIEND"`. When adding a friend, the action will include a
+   `friend` key assigned to an object with `name`, `hometown`, and `id` keys.
 
     ```js
       action = {
@@ -80,7 +82,7 @@ input, the reducers will always return the same output.
 
 As the Redux documentation notes:
 
->Since one of the core tenets of Redux is to never mutate state, you'll often
+> Since one of the core tenets of Redux is to never mutate state, you'll often
 find yourself using `Object.assign()` to create copies of objects with new or
 updated values.
 
