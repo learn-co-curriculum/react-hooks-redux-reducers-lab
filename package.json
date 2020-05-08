@@ -6,7 +6,7 @@
   "scripts": {
     "debug": "node-debug --hidden node_modules _mocha --watch",
     "debug-ide": "./bin/debug-ide",
-    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options nyan=-,json=.results.json"
   },
   "repository": {
     "type": "git",
