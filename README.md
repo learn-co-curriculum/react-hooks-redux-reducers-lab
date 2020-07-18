@@ -127,5 +127,3 @@ new value".
 - [Redux Docs: Object Spread Operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html)
 - [Mozilla findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 - [Redux Documentation](http://redux.js.org/docs/basics/Reducers.html)
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/redux-reducer'>Redux Reducer</a> on Learn.co and start learning to code for free.</p>
