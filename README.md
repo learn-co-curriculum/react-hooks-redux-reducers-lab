@@ -18,7 +18,7 @@ no longer like (or who give us socks every year!).
 In this lab, we will focus on writing two reducers to help us handle this task.
 Since we're drilling down into one concept, React is not set up in this lab, nor
 is there an `index.html` file. Follow the instructions below and implement your
-code in `/reducers/manageFriends.js` and `/reducers/managePresents.js`.
+code in `/src/manageFriends.js` and `/src/managePresents.js`.
 
 ## Instructions
 
