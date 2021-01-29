@@ -22,6 +22,9 @@ code in `/src/manageFriends.js` and `/src/managePresents.js`.
 
 ## Instructions
 
+For this lab, you won't be able to run any code in the browser. Just run
+`learn test` to check your code as you go!
+
 1. In `managePresents.js`, write a function called `managePresents()` that takes
    in the previous state and an action as its argument. Set an default value for
    the state argument - an object with a key, `numberOfPresents`, assigned to
