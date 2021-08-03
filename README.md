@@ -1,7 +1,5 @@
 # Reducers Lab
 
-![reduce](https://media.giphy.com/media/3o7TKwxYkeW0ZvTqsU/giphy.gif)
-
 ## Objectives
 
 1. Write a reducer.
