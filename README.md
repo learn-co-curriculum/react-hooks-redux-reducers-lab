@@ -1,10 +1,9 @@
 # Reducers Lab
 
-## Objectives
+## Learning Goals
 
-1. Write a reducer.
-2. The reducer should be a pure function.
-3. Write a reducer that takes an action(payload).
+- Write a reducer function
+- Use a reducer to update create a new state based on an action
 
 ## Overview
 
