@@ -56,7 +56,7 @@ describe("manageFriends", () => {
         },
         {
           name: "Steven",
-          hometown: "Philadephia",
+          hometown: "Philadelphia",
           id: 102,
         },
       ],
@@ -76,7 +76,7 @@ describe("manageFriends", () => {
         },
         {
           name: "Steven",
-          hometown: "Philadephia",
+          hometown: "Philadelphia",
           id: 102,
         },
       ],
@@ -98,7 +98,7 @@ describe("manageFriends", () => {
         },
         {
           name: "Steven",
-          hometown: "Philadephia",
+          hometown: "Philadelphia",
           id: 102,
         },
       ],
@@ -118,7 +118,7 @@ describe("manageFriends", () => {
         },
         {
           name: "Steven",
-          hometown: "Philadephia",
+          hometown: "Philadelphia",
           id: 102,
         },
       ],
