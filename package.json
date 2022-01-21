@@ -8,14 +8,14 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
-    "@ihollander/jest-learn-reporter": "^1.0.1",
+    "@learn-co-curriculum/jest-learn-reporter": "^0.1.0",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "mocha": "^8.2.1"
   },
   "jest": {
     "reporters": [
-      "@ihollander/jest-learn-reporter",
+      "@learn-co-curriculum/jest-learn-reporter",
       "default"
     ],
     "rootDir": "src"
