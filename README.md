@@ -19,64 +19,70 @@ code in `/src/manageFriends.js` and `/src/managePresents.js`.
 
 ## Instructions
 
-For this lab, you won't be able to run any code in the browser. Just run
-`learn test` to check your code as you go!
+To get started, run `npm install` to install the test dependencies.
 
-1. In `managePresents.js`, write a function called `managePresents()` that takes
-   in the previous state and an action as its argument. Set an default value for
-   the state argument - an object with a key, `numberOfPresents`, assigned to
-   `0`.
+For this lab, you won't be able to run any code in the browser. Just run the
+tests to check your code as you go!
 
-   Actions passed into this reducer will only have a _type_ attribute, so they
-   would look something like this:
+You'll be writing two reducers for this lesson. Both reducers should be pure
+functions. This means that the functions cannot change any object defined
+outside of the functions. It also means that given an input, the reducers will
+always return the same output.
 
-   ```js
-   action = {
-     type: "presents/increase",
-   };
-   ```
+### `managePresents` Function
 
-   If the reducer receives a `type` set to `"presents/increase"`, return a new state
-   where the value of `numberOfPresents` is increased by one. Use the tests to
-   guide you as you build out this reducer.
+In `managePresents.js`, write a function called `managePresents()` that takes in
+the previous state and an action as its argument. The default value for the
+state argument is an object with a key, `numberOfPresents`, assigned to `0`.
 
-2. In `manageFriends.js`, write a function called `manageFriends` that takes in
-   the previous state and an action as its argument. Here, the initial state
-   should be an object with a key, `friends`, set to an empty array.
+Actions passed into this reducer will only have a _type_ attribute, so they
+would look something like this:
 
-   This time, the reducer should be able to handle two actions, `"friends/add"`
-   and `"friends/remove"`. When adding a friend, the action will include a
-   `friend` key assigned to an object with `name`, `hometown`, and `id` keys.
+```js
+action = {
+  type: "presents/increase",
+};
+```
 
-   ```js
-     action = {
-       type: "friends/add",
-       payload: {
-         name: "Chrome Boi"
-         homewtown: "NYC",
-         id: 1
-       }
-     }
-   ```
+If the reducer receives a `type` set to `"presents/increase"`, return a new
+state where the value of `numberOfPresents` is increased by one. Use the tests
+to guide you as you build out this reducer.
 
-   When our reducer receives `"friends/add"`, it should return a new state with
-   this friend object added to the `friends` array.
+### `manageFriends` Function
 
-   When removing a friend, instead of an object, the action will include an `id` key
-   with an integer. Find the friend with the matching `id` and remove them. Thought of
-   in another way, the reducer is really returning a new state with an array of `friends`
-   that includes everyone _except_ the removed friend.
+In `manageFriends.js`, write a function called `manageFriends` that takes in the
+previous state and an action as its argument. Here, the initial state should be
+an object with a key, `friends`, set to an empty array.
 
-   ```js
-   action = {
-     type: "friends/remove",
-     payload: 1,
-   };
-   ```
+This time, the reducer should be able to handle two actions, `"friends/add"` and
+`"friends/remove"`. When adding a friend, the action will include a `friend` key
+assigned to an object with `name`, `hometown`, and `id` keys.
 
-Both reducers should be pure functions. This means that the functions cannot
-change any object defined outside of the functions. It also means that given an
-input, the reducers will always return the same output.
+```js
+action = {
+  type: "friends/add",
+  payload: {
+    name: "Chrome Boi"
+    homewtown: "NYC",
+    id: 1
+  }
+}
+```
+
+When our reducer receives `"friends/add"`, it should return a new state with
+this friend object added to the `friends` array.
+
+When removing a friend, instead of an object, the action will include an `id`
+key with an integer. Find the friend with the matching `id` and remove them.
+Thought of in another way, the reducer is really returning a new state with an
+array of `friends` that includes everyone _except_ the removed friend.
+
+```js
+action = {
+  type: "friends/remove",
+  payload: 1,
+};
+```
 
 ## Don't Mutate State
 
@@ -87,7 +93,8 @@ As the Redux documentation notes:
 > JavaScript's array / object spread operators, as well as array methods that
 > return new copies of the array instead of mutating the original array.
 
-Here's an example of creating a copy an object using the spread operator (`{...}`):
+Here's an example of creating a copy an object using the spread operator
+(`{...}`):
 
 ```javascript
 let dog = { id: 1, name: "scooby", color: "brown", age: 4 };
