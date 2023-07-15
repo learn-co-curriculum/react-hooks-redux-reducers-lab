@@ -62,7 +62,8 @@ describe("manageFriends", () => {
   it("removes the friend when action type is 'friends/remove' and the action has a property of the friends id to be removed", () => {
     const action = {
       type: "friends/remove",
-      payload: 100,
+      payload: { id: 100,
+      }
     };
 
     const newState = manageFriends(state, action);
